@@ -1,42 +1,53 @@
 ---
-import { Image } from "astro:assets";
+import "./index.css";
+import { Image ,Picture} from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import handj from "../assets/handj.jpg";
+import jhnobg from "../assets/jhnobg.png";
 ---
 
-<Layout title="Welcome to Yeet.">
-  <header>
-    <h1><i>SIM HO AND JEN GOT MARRIED!</i></h1>
-    <Image
-      densities={[1.8]}
-      src={handj}
+<Layout title="Welcome to Our Website.">
+  <header class="header">
+    <h1 class="title">SIM HO & JENNIFER</h1>
+    <div class="header-image-container">
+      <Picture
+        class="header-image"
+        densities={[2]}
+        src={handj}
+        alt="jen and sim ho background"
+        height="620"
+      />
+      <Picture
+      class="people"
+      src={jhnobg}
+      height="500"
       alt="jen and sim ho"
-      width="629"
-      height="419"
-    />
-    <a href="secondpage.html"
-      ><button class="pic-button">SEE OUR PICS!</button></a
-    >
+      />
+    </div>
+    <button class="pushable" onclick="">
+      <span class="shadow"></span>
+      <span class="edge"></span>
+      <span class="front">
+        See Our Pics!
+      </span>
+    </button>
   </header>
 
   <section>
-    <h1>OUR STORY</h1>
-    <p>
-      Jen and Sim Ho met in August of 2019 in Seoul, South Korea as Jen studied
-      abroad there for a semester. Sim Ho took Jen and her friends on a tour of
-      the library, and after much discussion on the quality of cafeteria food,
-      decided to stay in touch. They spent the entire four months of the
-      semester dating and falling in love. Jen went back to America, and after a
-      short 2 week trip to visit her, Sim Ho headed off to the Korean Army for
-      18 months. After almost 2 years, they would finally get to see each other
-      again. Sim Ho then decided to move his studies to America in 2022 and they
-      moved in together. The next part of this story has brought them here, and
-      while a big one, it is defintely not over yet!
+    <h2 class="story-title">OUR STORY</h2>
+    <p class="story">
+      When studying abroad in South Korea in August of 2019, Jen joined her
+      friends on the school tour led by a local student volunteer - Sim Ho.
+      After seeing her reaction to the cafeteria pasta he recommended, Sim Ho
+      promised to take her to a better meal without knowing this is how their
+      story would start. Almost two years, several visits, and a Korean Army
+      Service later, the two would finally move in together and eventually get
+      to right now: married!
     </p>
   </section>
 
   <section>
-    <h1>Q & A</h1>
+    <h2 class="story-title">Q & A</h2>
 
     <div class="qa-container">
       <div class="container-qs">
@@ -49,7 +60,7 @@ import handj from "../assets/handj.jpg";
 
       <div class="container-qs">
         <div class="question">
-          Are you sending any announcements I can put on my fridge?
+          Are you sending any announcements I can decorate my house with?
         </div>
         <div class="answer">
           Of course! Fill out our form below so we can send you our announcement
@@ -67,89 +78,18 @@ import handj from "../assets/handj.jpg";
       </div>
     </div>
   </section>
+<div class="bttn-container">
+  <h1>Looking For A Nice Picture to Hang on Your Fridge Indefinitely?</h1>
+  <h3>Press the Button Below to Fill Out Our Form</h3>
+  <button class="pushable" onclick=" window.open('https://forms.gle/HRbyFGqrzh3tTZQa9','_blank')">
+    <span class="shadow"></span>
+    <span class="edge"></span>
+    <span class="front">
+      Send Me An Announcement!
+    </span>
+  </button>
+</div>
+
 </Layout>
 
-<form action="submit_form.php" method="post">
-  <h1>Send Me An Announcement!</h1>
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required /><br /><br />
-
-  <label for="address">Address:</label>
-  <input type="text" id="address" name="address" required /><br /><br />
-
-  <label for="note">Note for us?:</label><br />
-  <textarea id="note" name="note" rows="4" cols="50" required></textarea><br
-  /><br />
-
-  <button class="form-button" type="submit">Submit</button>
-</form>
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  header,
-  h1,
-  h2 {
-    padding: 10px 0;
-    text-align: center;
-  }
-  img {
-    display: block;
-    aspect-ratio: 3/ 2;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  p {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .pic-button,
-  .form-button {
-    margin-top: 3rem;
-    background-color: #e0bfb8;
-  }
-
-  section {
-    padding: 20px;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-  .qa-container {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    padding: 0px 50px 0px 50px;
-  }
-
-  .container-qs {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 10px 2em;
-    margin-bottom: 1rem;
-    margin: 0 auto;
-  }
-
-  .question {
-    width: 50%;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    font-size: larger;
-  }
-
-  .answer {
-    width: 50%;
-  }
-
-  form {
-    text-align: center;
-    background-color: #967969;
-  }
-</style>
+<style></style>
